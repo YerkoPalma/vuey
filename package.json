@@ -1,0 +1,83 @@
+{
+  "name": "vuey",
+  "description": "personal collection of components",
+  "version": "0.0.0",
+  "author": {
+    "name": "YerkoPalma",
+    "email": "yerko.palma@usach.cl"
+  },
+  "bugs": {
+    "url": "https://github.com/YerkoPalma/vuey/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-coverage": "^1.0.0",
+    "babel-plugin-espower": "^2.0.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-es2015-rollup": "^1.0.0",
+    "babel-preset-es2015-rollup-vue": "^1.1.0",
+    "babel-preset-flow-vue": "^1.0.0",
+    "eslint-plugin-flow-vars": "^0.4.0",
+    "flow-bin": "^0.26.0",
+    "eslint": "^2.8.0",
+    "eslint-config-vue": "^1.0.0",
+    "eslint-loader": "^1.3.0",
+    "html-webpack-plugin": "^2.19.0",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "json-loader": "^0.5.4",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha-reporter": "^2.0.4",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^1.7.0",
+    "phantomjs-prebuilt": "^2.1.1",
+    "power-assert": "^1.2.0",
+    "rollup": "^0.26.3",
+    "rollup-plugin-babel": "^2.4.0",
+    "rollup-plugin-replace": "^1.1.0",
+    "uglify-js": "^2.6.1",
+    "vue": "^1.0.10",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "files": [
+    "dist/vuey.js",
+    "dist/vuey.min.js",
+    "dist/vuey.common.js",
+    "src"
+  ],
+  "homepage": "https://github.com/YerkoPalma/vuey#readme",
+  "jsnext:main": "src/index.js",
+  "keywords": [
+    "plugin",
+    "vue",
+    "vuejs"
+  ],
+  "license": "MIT",
+  "main": "dist/vuey.common.js",
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YerkoPalma/vuey.git"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production node config/build.js",
+    "clean": "rm -rf coverage && rm -rf dist/*.js* && rm ./*.log",
+    "dev": "webpack-dev-server --quiet --config config/webpack.dev.conf.js --host 0.0.0.0",
+    "flow": "flow check",
+    "lint": "eslint src test config",
+    "test": "npm run lint && npm run flow && npm run test:cover",
+    "test:cover": "NODE_ENV=development karma start config/karma.cover.conf.js",
+    "test:unit": "NODE_ENV=development karma start config/karma.unit.conf.js"
+  }
+}
