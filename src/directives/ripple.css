@@ -1,0 +1,237 @@
+.has-ripple {
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.point {
+  position: absolute;
+  background-color: #000;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+  width: 2px;
+  height: 2px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.ripple-effect {
+  -webkit-animation: ripple-animation 0.4s;
+          animation: ripple-animation 0.4s;
+}
+/* Size */
+.ripple-effect.small {
+  -webkit-animation: ripple-animation-small 0.2s;
+          animation: ripple-animation-small 0.2s;
+}
+.ripple-effect.xsmall {
+  -webkit-animation: ripple-animation-xsmall 0.2s;
+          animation: ripple-animation-xsmall 0.2s;
+}
+.ripple-effect.large {
+  -webkit-animation: ripple-animation-large 0.2s;
+          animation: ripple-animation-large 0.2s;
+}
+.ripple-effect.xlarge {
+  -webkit-animation: ripple-animation-xlarge 0.2s;
+          animation: ripple-animation-xlarge 0.2s;
+}
+/* Speed */
+.ripple-effect.slow {
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+}
+.ripple-effect.fast {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+/* Colors */
+.ripple-effect.black {
+  background-color: #000;
+}
+.ripple-effect.red {
+  background-color: #f44336;
+}
+.ripple-effect.pink {
+  background-color: #e91e63;
+}
+.ripple-effect.purple {
+  background-color: #9c27b0;
+}
+.ripple-effect.indigo {
+  background-color: #3f51b5;
+}
+.ripple-effect.blue {
+  background-color: #2196f3;
+}
+.ripple-effect.cyan {
+  background-color: #00bcd4;
+}
+.ripple-effect.teal {
+  background-color: #009688;
+}
+.ripple-effect.green {
+  background-color: #4caf50;
+}
+.ripple-effect.lime {
+  background-color: #cddc39;
+}
+.ripple-effect.yellow {
+  background-color: #ffeb3b;
+}
+.ripple-effect.amber {
+  background-color: #ffc107;
+}
+.ripple-effect.orange {
+  background-color: #ff9800;
+}
+.ripple-effect.brown {
+  background-color: #795548;
+}
+.ripple-effect.grey {
+  background-color: #9e9e9e;
+}
+.ripple-effect.white {
+  background-color: #ffffff;
+}
+/* Animations */
+@-webkit-keyframes ripple-animation {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(100);
+              transform: scale(100);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@keyframes ripple-animation {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(100);
+              transform: scale(100);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@-webkit-keyframes ripple-animation-small {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(50);
+              transform: scale(50);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@keyframes ripple-animation-small {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(50);
+              transform: scale(50);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@-webkit-keyframes ripple-animation-xsmall {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(10);
+              transform: scale(10);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@keyframes ripple-animation-xsmall {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(10);
+              transform: scale(10);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@-webkit-keyframes ripple-animation-large {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(150);
+              transform: scale(150);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@keyframes ripple-animation-large {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(150);
+              transform: scale(150);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@-webkit-keyframes ripple-animation-xlarge {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(250);
+              transform: scale(250);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+@keyframes ripple-animation-xlarge {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 0.4;
+      filter: alpha(opacity=40);
+    }
+    to {
+      -webkit-transform: scale(250);
+              transform: scale(250);
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}

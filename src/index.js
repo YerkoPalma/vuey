@@ -3,7 +3,7 @@ import override from './override'
 
 function plugin (Vue: any, options: Object = {}) {
   override(Vue)
-  
+
   Vue.prototype.$add = (a: number, b: number): number => {
     return a + b
   }

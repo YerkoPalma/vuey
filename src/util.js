@@ -1,7 +1,7 @@
 /* @flow */
 export function createStyleSheet (): CSSStyleSheet {
   // Create the <style> tag
-  let style: any = document.createElement('style')
+  const style: any = document.createElement('style')
 
   // Add a media (and/or media query) here if you'd like!
   style.setAttribute('media', 'screen')
@@ -20,38 +20,15 @@ export function addCssRule (sheet: CSSStyleSheet, selector: any, rules: string, 
   let ruleString: string = ''
   if (typeof rules === 'object') {
     ruleString = '{ '
-    for(let key in rules) {
+    for (const key in rules) {
       ruleString += `${key}: ${rules[key]};`
     }
     ruleString += '}'
   } else if (typeof rules === 'string') {
-  	ruleString = `{ ${rules} }`
+    ruleString = `{ ${rules} }`
   }
 
-	if(sheet.hasOwnProperty('insertRule')) {
-		sheet.insertRule(`${selector} ${ruleString}`, index)
-	}
-	else if(sheet.hasOwnProperty('addRule')) {
-		sheet.addRule(selector, ruleString, index)
-	}
-}
-
-export function addKeyframeAnimation(sheet: CSSStyleSheet, name: string, rules: Object) {
-  // make the string
-  let animation: string
-  if (rules.from && rules.to) {
-    animation =
-    `@keyframes ${name} {
-      from {
-        ${rules.from}
-      }
-      to {
-        ${rules.to}
-      }
-    }`
+  if (sheet.hasOwnProperty('insertRule')) {
+    sheet.insertRule(`${selector} ${ruleString}`, index)
   }
-
-  if(sheet.hasOwnProperty('insertRule')) {
-		sheet.insertRule(animation, index)
-	}
 }
