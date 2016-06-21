@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ripple example</title>
+    <style>
+      .target {
+        margin-top: 20px;
+        margin-left: 100px;
+        height: 100px;
+        width: 100px;
+        position: relative;
+        background-color: #777;
+      }
+    </style>
+    <script src="../../node_modules/vue/dist/vue.min.js"></script>
+    <script src="../../dist/vuey.js"></script>
+  </head>
+  <body>
+  <div class="target" v-ripple></div>
+  <script>
+    var vm = new Vue({
+      el: 'body',
+      data: { value: 0 }
+    })
+  </script>
+  </body>
+</html>

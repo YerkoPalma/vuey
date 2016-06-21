@@ -1,15 +1,13 @@
 /* @flow */
 import override from './override'
+import ripple from './directives/ripple'
 
 function plugin (Vue: any, options: Object = {}) {
   override(Vue)
-
-  Vue.prototype.$add = (a: number, b: number): number => {
-    return a + b
-  }
+  ripple(Vue)
 }
 
-plugin.version = '1.3.0'
+plugin.version = '0.0.0'
 
 export default plugin
 

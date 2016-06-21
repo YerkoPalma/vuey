@@ -12,7 +12,7 @@ export default function (Vue: any) {
         point.classList.add('point')
         point.style.top = `${y}px`
         point.style.left = `${x}px`
-        this.el.appendChild(point)
+        point.classList.add('ripple-effect')
 
         // 2. expand effect on point
         // size
@@ -36,6 +36,7 @@ export default function (Vue: any) {
           point.classList.add('fast')
         }
 
+        this.el.appendChild(point)
         // 3. remove ugly point
         point.addEventListener('animationend', function (e) {
           if (point.parentNode) {
