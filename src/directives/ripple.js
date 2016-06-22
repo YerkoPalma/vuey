@@ -4,6 +4,7 @@ export default function (Vue: any) {
   Vue.directive('ripple', {
     bind () {
       const vm = this.vm
+      const rippleOptions: Object = rippleOptions
       this.handler = e => {
         this.el.classList.add('has-ripple')
         const rect = this.el.getBoundingClientRect()
@@ -14,11 +15,10 @@ export default function (Vue: any) {
         point.style.top = `${y}px`
         point.style.left = `${x}px`
         // callback before
-        if (typeof vm.$options.ripple.before === 'function') {
-          vm.$options.ripple.before()
+        if (typeof rippleOptions.before === 'function') {
+          rippleOptions.before()
         }
         point.classList.add('ripple-effect')
-        const rippleOptions: Object = vm.$options.ripple
 
         // apply options
         if (rippleOptions.color && typeof rippleOptions.color === 'string') {
@@ -103,12 +103,18 @@ export default function (Vue: any) {
             point.parentNode.removeChild(point)
           }
           // callback after
-          if (typeof vm.$options.ripple.after === 'function') {
-            vm.$options.ripple.after()
+          if (typeof rippleOptions.after === 'function') {
+            rippleOptions.after()
           }
         })
       }
-      this.el.addEventListener('click', this.handler)
+      if (rippleOptions.trigger
+          && rippleOptions.trigger.target
+          && document.querySelector(rippleOptions.trigger.target) === this.el) {
+        this.el.addEventListener(rippleOptions.trigger.event, this.handler)
+      } else {
+        this.el.addEventListener('click', this.handler)
+      }
     },
     update (newValue, oldValue) {
 
