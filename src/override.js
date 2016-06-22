@@ -3,8 +3,8 @@
 export default function (Vue: any) {
   const init = Vue.prototype._init
   Vue.prototype._init = function (options) {
-    const head  = document.getElementsByTagName('head')[0]
-    const link  = document.createElement('link')
+    const head = document.getElementsByTagName('head')[0]
+    const link = document.createElement('link')
     link.id = 'vuey-ripple'
     link.rel = 'stylesheet'
     link.type = 'text/css'

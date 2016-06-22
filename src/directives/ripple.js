@@ -4,7 +4,7 @@ export default function (Vue: any) {
   Vue.directive('ripple', {
     bind () {
       const vm = this.vm
-      const rippleOptions: Object = rippleOptions
+      const rippleOptions: Object = vm.$options.ripple
       this.handler = e => {
         this.el.classList.add('has-ripple')
         const rect = this.el.getBoundingClientRect()
@@ -108,9 +108,9 @@ export default function (Vue: any) {
           }
         })
       }
-      if (rippleOptions.trigger
-          && rippleOptions.trigger.target
-          && document.querySelector(rippleOptions.trigger.target) === this.el) {
+      if (rippleOptions.trigger &&
+          rippleOptions.trigger.target &&
+          document.querySelector(rippleOptions.trigger.target) === this.el) {
         this.el.addEventListener(rippleOptions.trigger.event, this.handler)
       } else {
         this.el.addEventListener('click', this.handler)
