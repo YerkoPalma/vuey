@@ -3,6 +3,7 @@
 export default function (Vue: any) {
   Vue.directive('ripple', {
     bind () {
+      const vm = this.vm
       this.handler = e => {
         this.el.classList.add('has-ripple')
         const rect = this.el.getBoundingClientRect()
@@ -12,7 +13,17 @@ export default function (Vue: any) {
         point.classList.add('point')
         point.style.top = `${y}px`
         point.style.left = `${x}px`
+        // callback before
+        if (typeof vm.$options.ripple.before === 'function') {
+          vm.$options.ripple.before()
+        }
         point.classList.add('ripple-effect')
+        const rippleOptions: Object = vm.$options.ripple
+
+        // apply options
+        if (rippleOptions.color && typeof rippleOptions.color === 'string') {
+          point.style['background-color'] = rippleOptions.color
+        }
 
         // 2. expand effect on point
         // size
@@ -90,6 +101,10 @@ export default function (Vue: any) {
         point.addEventListener('animationend', function (e) {
           if (point.parentNode) {
             point.parentNode.removeChild(point)
+          }
+          // callback after
+          if (typeof vm.$options.ripple.after === 'function') {
+            vm.$options.ripple.after()
           }
         })
       }
