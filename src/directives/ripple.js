@@ -35,6 +35,55 @@ export default function (Vue: any) {
         if (this.modifiers.fast) {
           point.classList.add('fast')
         }
+        // colors
+        if (this.modifiers.black) {
+          point.classList.add('black')
+        }
+        if (this.modifiers.red) {
+          point.classList.add('red')
+        }
+        if (this.modifiers.pink) {
+          point.classList.add('pink')
+        }
+        if (this.modifiers.purple) {
+          point.classList.add('purple')
+        }
+        if (this.modifiers.indigo) {
+          point.classList.add('indigo')
+        }
+        if (this.modifiers.blue) {
+          point.classList.add('blue')
+        }
+        if (this.modifiers.cyan) {
+          point.classList.add('cyan')
+        }
+        if (this.modifiers.teal) {
+          point.classList.add('teal')
+        }
+        if (this.modifiers.green) {
+          point.classList.add('green')
+        }
+        if (this.modifiers.lime) {
+          point.classList.add('lime')
+        }
+        if (this.modifiers.yellow) {
+          point.classList.add('yellow')
+        }
+        if (this.modifiers.amber) {
+          point.classList.add('amber')
+        }
+        if (this.modifiers.orange) {
+          point.classList.add('orange')
+        }
+        if (this.modifiers.brown) {
+          point.classList.add('brown')
+        }
+        if (this.modifiers.grey) {
+          point.classList.add('grey')
+        }
+        if (this.modifiers.white) {
+          point.classList.add('white')
+        }
 
         this.el.appendChild(point)
         // 3. remove ugly point
