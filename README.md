@@ -2,32 +2,52 @@
 
 > personal collection of components
 
+## Usage
 
+Currently there is only the `ripple` directive availaible.
 
-## Build Setup
+### ripple directive
 
-    # install dependencies
-    npm install
+You can check the specification [here](https://github.com/YerkoPalma/vuey/issues/1). First of all include the plugin.
 
-    # serve with hot reload at localhost:8080
-    npm run dev
+```vue
+import Vue from 'vue'
+import vuey from 'vuey'
 
-    # lint source codes
-    npm run lint
+Vue.use(vuey)
+```
 
-    # build for production with minification
-    npm run build
+Now the directive is ready to use with its default values
 
-    # run unit tests
-    npm run unit
+```vue
+<template>
+<button v-ripple></button>
+</template>
+```
 
-    # run all tests
-    npm test
+Or you can customize any of the default options availaibles
 
-## Changelog
-Details changes for each release are documented in the [CHANGELOG.md](https://github.com/YerkoPalma/vuey/blob/dev/CHANGELOG.md).
+```vue
+<template>
+<button></button>
+</template>
+<script>
+export default {
+  ripple: {
+    color: '#e3e3e3',
+    speed: 2
+  }
+}
+</script>
+```
 
+Those options will modify all the `ripple` directives, you can use modifiers for specific animations on specific elements
 
+```vue
+<template>
+<button v-ripple.blue></button>
+</template>
+```
 ## Contribution
 - Fork it !
 - Create your top branch from `dev`: `git branch my-new-topic origin/dev`
