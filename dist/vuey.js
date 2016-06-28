@@ -1,5 +1,5 @@
 /*!
- * vuey v0.0.1 
+ * vuey v0.0.4 
  * (c) 2016 YerkoPalma
  * Released under the MIT License.
  */
@@ -17,7 +17,7 @@
       link.id = 'vuey';
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = '/src/directives/ripple.css';
+      link.href = 'node_modules/vuey/dist/ripple.min.css';
       link.media = 'all';
       head.appendChild(link);
       init.call(this, options);
@@ -159,7 +159,7 @@
     ripple(Vue);
   }
 
-  plugin.version = '0.0.1';
+  plugin.version = '0.0.4';
 
   if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(plugin);

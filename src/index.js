@@ -7,7 +7,7 @@ function plugin (Vue: any, options: Object = {}) {
   ripple(Vue)
 }
 
-plugin.version = '0.0.1'
+plugin.version = '0.0.4'
 
 export default plugin
 
