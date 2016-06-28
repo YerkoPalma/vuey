@@ -8,7 +8,7 @@ export default function (Vue: any) {
     link.id = 'vuey'
     link.rel = 'stylesheet'
     link.type = 'text/css'
-    link.href = 'src/directives/ripple.css'
+    link.href = 'node_modules/vuey/dist/ripple.min.css'
     link.media = 'all'
     head.appendChild(link)
     init.call(this, options)
