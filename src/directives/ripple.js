@@ -4,7 +4,7 @@ export default function (Vue: any) {
   Vue.directive('ripple', {
     bind () {
       const vm = this.vm
-      const rippleOptions: Object = vm.$options.ripple
+      const rippleOptions: Object = vm.$options.ripple || {}
       this.handler = e => {
         this.el.classList.add('has-ripple')
         const rect = this.el.getBoundingClientRect()
@@ -24,7 +24,7 @@ export default function (Vue: any) {
         if (rippleOptions.color && typeof rippleOptions.color === 'string') {
           point.style['background-color'] = rippleOptions.color
         }
-        if (vm.$options.ripple.speed) {
+        if (rippleOptions.speed) {
           point.style['animation-duration'] = `${vm.$options.ripple.speed}s`
         }
 
