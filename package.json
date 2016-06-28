@@ -53,6 +53,8 @@
     "dist/vuey.js",
     "dist/vuey.min.js",
     "dist/vuey.common.js",
+    "dist/vuey.min.css",
+    "dist/vuey.min.css.map",
     "src"
   ],
   "homepage": "https://github.com/YerkoPalma/vuey#readme",
