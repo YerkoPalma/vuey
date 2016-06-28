@@ -12,8 +12,8 @@ export default function (Vue: any) {
       link.href = 'node_modules/vuey/dist/ripple.min.css'
       link.media = 'all'
       head.appendChild(link)
-      init.call(this, options)
     }
+    init.call(this, options)
   }
 
   Vue.prototype._destroy = function () {
