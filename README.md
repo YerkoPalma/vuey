@@ -10,11 +10,17 @@ Currently there is only the `ripple` directive availaible.
 
 You can check the specification [here](https://github.com/YerkoPalma/vuey/issues/1). First of all include the plugin.
 
-```vue
+```javascript
 import Vue from 'vue'
 import vuey from 'vuey'
 
 Vue.use(vuey)
+```
+
+And add the stylesheet
+
+```html
+<link rel="stylesheet" type="text/css" id="vuey" href="node_modules/vuey/dist/vuey.min.css">
 ```
 
 Now the directive is ready to use with its default values

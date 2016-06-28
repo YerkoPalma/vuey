@@ -1,5 +1,5 @@
 /*!
- * vuey v0.0.4 
+ * vuey v0.0.5 
  * (c) 2016 YerkoPalma
  * Released under the MIT License.
  */
@@ -12,15 +12,17 @@
   function override (Vue) {
     var init = Vue.prototype._init;
     Vue.prototype._init = function (options) {
-      var head = document.getElementsByTagName('head')[0];
-      var link = document.createElement('link');
-      link.id = 'vuey';
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = 'node_modules/vuey/dist/ripple.min.css';
-      link.media = 'all';
-      head.appendChild(link);
-      init.call(this, options);
+      if (!document.getElementById('vuey')) {
+        var head = document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+        link.id = 'vuey';
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'node_modules/vuey/dist/ripple.min.css';
+        link.media = 'all';
+        head.appendChild(link);
+        init.call(this, options);
+      }
     };
 
     Vue.prototype._destroy = function () {};
@@ -159,7 +161,7 @@
     ripple(Vue);
   }
 
-  plugin.version = '0.0.4';
+  plugin.version = '0.0.5';
 
   if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(plugin);
