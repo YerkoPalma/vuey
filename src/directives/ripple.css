@@ -21,29 +21,29 @@
 }
 /* Size */
 .ripple-effect.small {
-  -webkit-animation: ripple-animation-small 0.2s;
-          animation: ripple-animation-small 0.2s;
+  -webkit-animation-name: ripple-animation-small !important;
+          animation-name: ripple-animation-small !important;
 }
 .ripple-effect.xsmall {
-  -webkit-animation: ripple-animation-xsmall 0.2s;
-          animation: ripple-animation-xsmall 0.2s;
+  -webkit-animation-name: ripple-animation-xsmall !important;
+          animation-name: ripple-animation-xsmall !important;
 }
 .ripple-effect.large {
-  -webkit-animation: ripple-animation-large 0.2s;
-          animation: ripple-animation-large 0.2s;
+  -webkit-animation-name: ripple-animation-large !important;
+          animation-name: ripple-animation-large !important;
 }
 .ripple-effect.xlarge {
-  -webkit-animation: ripple-animation-xlarge 0.2s;
-          animation: ripple-animation-xlarge 0.2s;
+  -webkit-animation-name: ripple-animation-xlarge !important;
+          animation-name: ripple-animation-xlarge !important;
 }
 /* Speed */
 .ripple-effect.slow {
-  -webkit-animation-duration: 0.9s;
-          animation-duration: 0.9s;
+  -webkit-animation-duration: 0.9s !important;
+          animation-duration: 0.9s !important;
 }
 .ripple-effect.fast {
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
+  -webkit-animation-duration: 0.2s !important;
+          animation-duration: 0.2s !important;
 }
 /* Colors */
 .ripple-effect.black {

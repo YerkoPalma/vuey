@@ -24,6 +24,9 @@ export default function (Vue: any) {
         if (rippleOptions.color && typeof rippleOptions.color === 'string') {
           point.style['background-color'] = rippleOptions.color
         }
+        if (vm.$options.ripple.speed) {
+          point.style['animation-duration'] = `${vm.$options.ripple.speed}s`
+        }
 
         // 2. expand effect on point
         // size
